@@ -11,6 +11,10 @@ def print_program_info():
 # This is the entry point to our program
 if __name__ == '__main__':
     print_program_info()
-    my_server = Server("34.219.110.138")
-    if my_server.ping() == 0:
-        print("success")
+    instance_ip = input("Instance IP: ")
+    key_location = input("Path to Key Pair: ")
+    # my_server = Server("34.219.110.138")
+    # if my_server.ping() == 0:
+    #     print("success")
+    my_server = Server(instance_ip, key_location)
+    my_server.run_command()
