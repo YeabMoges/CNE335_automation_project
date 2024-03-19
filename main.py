@@ -17,4 +17,4 @@ if __name__ == '__main__':
     # if my_server.ping() == 0:
     #     print("success")
     my_server = Server(instance_ip, key_location)
-    my_server.run_command("pwd")
+    my_server.run_command("sudo apt update && sudo apt -y upgrade")
