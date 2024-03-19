@@ -16,10 +16,10 @@ class Server:
         # TODO - Use os module to ping the server
         return os.system(f"ping -n 1 {self.server_ip}")
 
-    def run_command(self):
+    def run_command(self, command):
 
         self.ssh.connect(hostname=self.server_ip, username='ubuntu', pkey=self.key)
-        stdin, stdout, stderr = self.ssh.exec_command("ping -c 5 8.8.8.8")
+        stdin, stdout, stderr = self.ssh.exec_command(command)
         line = stdout.readline()
         while line:
             print(line)
